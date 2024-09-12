@@ -9,7 +9,7 @@ GH_TOKEN = os.getenv('GH_TOKEN')
 
 # List of repositories you want to delete
 repositories_to_delete = [
-    "test-01",
+    "test-11",
     "test-12",
     # Add more repositories here
 ]
