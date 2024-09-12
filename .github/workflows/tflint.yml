@@ -1,0 +1,44 @@
+name: Terrafor Lint
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+env:
+    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+#########################
+jobs:
+  tflint:
+    if: ${{ !startswith(github.event.pull_request.head.ref, 'feat:') }}
+    # Set the agent to run on
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - uses: actions/cache@704facf57e6136b1bc63b828d79edcd491f0ee84
+      name: Cache plugin dir
+      with:
+        path: -/.tflint.d/plugins
+        key: ubuntu-latest-tflint-${{ hashFiles('.tflint.hcl') }}
+
+    - uses: terraform-linters/setup-tflint@444635365d380c7363d1eaee4267317c2445717d
+      name: Setup TFLint
+      with:
+        tflint_version: v0.45.0
+
+    - name: Show version
+      run: tflint --version
+
+    - name: Init TFLint
+      run: tflint --init
+
+    - name: Run TFLint
+      run: tflint -f compact
+
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt --check
+      continue-on-error: false
+      
