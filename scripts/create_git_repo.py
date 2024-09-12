@@ -12,8 +12,8 @@ GH_TOKEN = os.getenv('GH_TOKEN')
 
 # List of repositories with their properties
 repositories = [
-    {"name": "test-11", "description": "This is the first test repository.", "private": True},
-    {"name": "test-12", "description": "This is the second test repository.", "private": False},
+    {"name": "cloud-secrets", "description": "This is the repository for secrets.", "private": True},
+    #{"name": "test-12", "description": "This is the second test repository.", "private": False},
     # Add more repositories here
 ]
 
