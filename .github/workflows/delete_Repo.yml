@@ -1,0 +1,51 @@
+name: Run Python Script to Delete GitHub Repo
+
+on:
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - edited
+  #     - synchronize
+  #   paths:
+  #     - 'scripts/delete_git_repo.py'
+  push:
+    branches:
+      - main  # Adjust this if you want to trigger on a different branch
+    paths:
+      - 'scripts/delete_git_repo.py'
+
+jobs:
+  create_repo_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: set working directory
+    - name: set working directory
+      working-directory: scripts
+      run: ls -R
+
+    # Step 3: Set up Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    # Step 4: Install Python dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    # Step 5: Run the Python script (inside scripts/)
+    - name: Run Python Script
+      working-directory: scripts
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}   # GitHub token from repository secrets
+        GH_USERNAME: ${{ secrets.GH_USERNAME }}
+        GH_USER_EMAIL: ${{ secrets.GH_USER_EMAIL }}
+        GH_USER_NAME: ${{ secrets.GH_USER_NAME }}
+      run: python delete_git_repo.py  # Updated path to the script
