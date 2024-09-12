@@ -1,13 +1,13 @@
 name: Run Python Script to Create GitHub Repos
 
 on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-    paths:
-      - 'scripts/create_git_repo.py'
+  # pull_request:
+  #   types:
+  #     - opened
+  #     - edited
+  #     - synchronize
+  #   paths:
+  #     - 'scripts/create_git_repo.py'
   push:
     branches:
       - main  # Adjust this if you want to trigger on a different branch
