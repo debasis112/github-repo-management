@@ -13,7 +13,7 @@ GH_TOKEN = os.getenv('GH_TOKEN')
 # List of repositories with their properties
 repositories = [
     {"name": "cloud-secrets", "description": "This is the repository for secrets.", "private": True},
-    #{"name": "test-12", "description": "This is the second test repository.", "private": False},
+    {"name": "aws-cloud-setup", "description": "This repository is for aws resources.", "private": True},
     # Add more repositories here
 ]
 
