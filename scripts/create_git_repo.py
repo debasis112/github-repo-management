@@ -16,6 +16,7 @@ repositories = [
     {"name": "aws-cloud-setup", "description": "This repository is for aws resources.", "private": True},
     {"name": "azure-cloud-setup", "description": "This repository is for azure resources.", "private": True},
     {"name": "web-page-test-01", "description": "This repository is for test of Docker.", "private": True},
+    {"name": "terraform-resources", "description": "This repository is for management of terraform project and workspace.", "private": True}
     # Add more repositories here
 ]
 
