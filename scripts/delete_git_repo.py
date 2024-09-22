@@ -11,7 +11,8 @@ GH_TOKEN = os.getenv('GH_TOKEN')
 repositories_to_delete = [
     "aws-cloud-setup",
     "web-page-test-01",
-    "cloud-secrets"
+    "cloud-secrets",
+    "git-test-01"
     # Add more repositories here
 ]
 
