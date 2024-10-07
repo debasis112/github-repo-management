@@ -17,7 +17,9 @@ repositories = [
     {"name": "aws-cloud-resources", "description": "This repository is for aws resources.", "private": False},
     {"name": "azure-cloud-setup", "description": "This repository is for azure resources.", "private": True},
     {"name": "web-page-test-01", "description": "This repository is for test of Docker.", "private": True},
-    {"name": "terraform-resources", "description": "This repository is for management of terraform project and workspace.", "private": True}
+    {"name": "terraform-resources", "description": "This repository is for management of terraform project and workspace.", "private": True},
+    {"name": "web-pages-docker-push", "description": "This repository is for web page to create and push image to docker hub.", "private": True},
+    {"name": "web-pages-acr-push", "description": "This repository is for web page to pull Docker image and push to ACR.", "private": True},
     # Add more repositories here
 ]
 
