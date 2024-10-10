@@ -13,10 +13,8 @@ GH_TOKEN = os.getenv('GH_TOKEN')
 # List of repositories with their properties
 repositories = [
     {"name": "cloud-secrets", "description": "This is the repository for secrets.", "private": True},
-    {"name": "aws-cloud-setup", "description": "This repository is for aws resources.", "private": True},
     {"name": "aws-cloud-resources", "description": "This repository is for aws resources.", "private": False},
     {"name": "azure-cloud-setup", "description": "This repository is for azure resources.", "private": True},
-    {"name": "web-page-test-01", "description": "This repository is for test of Docker.", "private": True},
     {"name": "terraform-resources", "description": "This repository is for management of terraform project and workspace.", "private": True},
     {"name": "web-pages-docker-push", "description": "This repository is for web page to create and push image to docker hub.", "private": False},
     {"name": "web-pages-acr-push", "description": "This repository is for web page to pull Docker image and push to ACR.", "private": False},
