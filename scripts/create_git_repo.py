@@ -18,6 +18,7 @@ repositories = [
     {"name": "terraform-resources", "description": "This repository is for management of terraform project and workspace.", "private": True},
     {"name": "web-pages-docker-push", "description": "This repository is for web page to create and push image to docker hub.", "private": False},
     {"name": "web-pages-acr-push", "description": "This repository is for web page to pull Docker image and push to ACR.", "private": False},
+    {"name": "web-pages-ecr-push", "description": "This repository is for web page to pull Docker image and push to ECR.", "private": False},
     # Add more repositories here
 ]
 
