@@ -37,8 +37,13 @@ jobs:
     - name: Run TFLint
       run: tflint -f compact
 
+    # Add this step to install Terraform
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.0 # Use the required Terraform version
+
     - name: Terraform fmt
       id: fmt
       run: terraform fmt --check
       continue-on-error: false
-      
